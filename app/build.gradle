@@ -26,6 +26,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    // Data Binding Enable
+    dataBinding.enabled = true
+
 }
 
 dependencies {
@@ -36,4 +39,14 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //SDP for View Scaling
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    //slider dependencies
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
+    // picaso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
