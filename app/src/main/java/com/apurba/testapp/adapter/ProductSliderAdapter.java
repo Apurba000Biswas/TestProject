@@ -2,6 +2,7 @@ package com.apurba.testapp.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.apurba.testapp.R;
+import com.apurba.testapp.SlideChangeListener;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 import com.squareup.picasso.Picasso;
 
@@ -21,6 +23,7 @@ public class ProductSliderAdapter extends SliderViewAdapter<ProductSliderAdapter
 
     private Context context;
     private List<String> mSliderItems = new ArrayList<>();
+    private SlideChangeListener changeListener;
 
     public ProductSliderAdapter(Context context) {
         this.context = context;
@@ -29,6 +32,10 @@ public class ProductSliderAdapter extends SliderViewAdapter<ProductSliderAdapter
     public void renewItems(List<String> sliderItems) {
         this.mSliderItems = sliderItems;
         notifyDataSetChanged();
+    }
+
+    public void setChangeListener(SlideChangeListener listener){
+        this.changeListener = listener;
     }
 
     public void deleteItem(int position) {
@@ -50,6 +57,7 @@ public class ProductSliderAdapter extends SliderViewAdapter<ProductSliderAdapter
     @Override
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
         String sliderUrl = mSliderItems.get(position);
+        if (changeListener!= null) changeListener.onSlideChange(position+1);
 
         Picasso.get()
                 .load(sliderUrl)

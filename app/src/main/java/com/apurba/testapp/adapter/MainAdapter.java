@@ -24,6 +24,9 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
             case 1:
                 return DESCRIPTION_VIEW_TYPE;
 
+            default:
+                return 0;
+
         }
     }
 
@@ -39,9 +42,12 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                         .inflate(R.layout.price_view, parent, false);
                 return new PriceViewHolder(searchView);
             case DESCRIPTION_VIEW_TYPE:
+                return null;
                 //View newsFeedHeaderView = LayoutInflater.from(parent.getContext())
                   //      .inflate(R.layout.news_feed_header_view, parent, false);
                 //return new NewsFeedHeaderViewHolder(newsFeedHeaderView);
+            default:
+                return null;
         }
     }
 
