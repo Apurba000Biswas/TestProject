@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             binding.slideNumber.setText(slideText);
         });
 
+
         binding.imageSlider.setSliderAdapter(adapter);
         binding.imageSlider.startAutoCycle();
         binding.imageSlider.setIndicatorAnimation(IndicatorAnimationType.WORM);
@@ -107,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
         binding.rvProductDetails.setLayoutManager(layoutManager);
 
         MainAdapter adapter = new MainAdapter();
+        List<String> variationImages = new ArrayList<>();
+        variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
+        variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");
+        variationImages.add("https://lh3.googleusercontent.com/proxy/0CbxIWEYUoC9HcwuhG8_tlKlmueYjB7H9VI9ZxZwuYfvfqfbiEZa-YTUCDvV5LTzaK_D4vfKSHnmp993e-cQ4ZsagvdqM2jilpi6IXWQ_lVi3-xte6BE_n1eEygsy5jD_TqF-RbP6hL92MIg35Vx4A");
+        variationImages.add("https://lh3.googleusercontent.com/proxy/NOasWwMUJvvoG9UqL-8T-FLw_UIA2J2tHjG8HpcsY4GoJuUhz-H6kGcFuL5P9QgltDfIClbbmk89Escm9a7pRQjbACsJfbO6EhrmhtHuo19m73YJkCLm3qkM4SrrKnVVXiHqOSgAgvyoHuyR6C8sbw");
+        variationImages.add("https://ae01.alicdn.com/kf/HTB1EfLjN3TqK1RjSZPhq6xfOFXas/Classic-Plaid-Men-s-Suit-Dress-Slim-Fit-Tuxedo-Wedding-Evening-Clothing-British-Style-Checkered-Formal.jpg");
+
+        adapter.setVariationImageList(variationImages);
+
         binding.rvProductDetails.setAdapter(adapter);
     }
 
