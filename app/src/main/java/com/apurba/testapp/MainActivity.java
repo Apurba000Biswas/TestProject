@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 
 import com.apurba.testapp.adapter.MainAdapter;
 import com.apurba.testapp.adapter.ProductSliderAdapter;
+import com.apurba.testapp.data.SuggestionModel;
 import com.apurba.testapp.databinding.ActivityMainBinding;
 import com.apurba.testapp.util.AnimationUtility;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -21,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
 
     ActivityMainBinding binding;
 
@@ -111,11 +111,28 @@ public class MainActivity extends AppCompatActivity {
         List<String> variationImages = new ArrayList<>();
         variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
         variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");
-        variationImages.add("https://lh3.googleusercontent.com/proxy/0CbxIWEYUoC9HcwuhG8_tlKlmueYjB7H9VI9ZxZwuYfvfqfbiEZa-YTUCDvV5LTzaK_D4vfKSHnmp993e-cQ4ZsagvdqM2jilpi6IXWQ_lVi3-xte6BE_n1eEygsy5jD_TqF-RbP6hL92MIg35Vx4A");
-        variationImages.add("https://lh3.googleusercontent.com/proxy/NOasWwMUJvvoG9UqL-8T-FLw_UIA2J2tHjG8HpcsY4GoJuUhz-H6kGcFuL5P9QgltDfIClbbmk89Escm9a7pRQjbACsJfbO6EhrmhtHuo19m73YJkCLm3qkM4SrrKnVVXiHqOSgAgvyoHuyR6C8sbw");
         variationImages.add("https://ae01.alicdn.com/kf/HTB1EfLjN3TqK1RjSZPhq6xfOFXas/Classic-Plaid-Men-s-Suit-Dress-Slim-Fit-Tuxedo-Wedding-Evening-Clothing-British-Style-Checkered-Formal.jpg");
+        variationImages.add("https://labane.com/wp-content/uploads/2019/10/Mens-Blazer-business-formal-Slim-Blaser-Clothing-Men-BL104.jpg");
 
+        variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
+        variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");
+        //variationImages.add("https://ae01.alicdn.com/kf/HTB1EfLjN3TqK1RjSZPhq6xfOFXas/Classic-Plaid-Men-s-Suit-Dress-Slim-Fit-Tuxedo-Wedding-Evening-Clothing-British-Style-Checkered-Formal.jpg");
+        //variationImages.add("https://labane.com/wp-content/uploads/2019/10/Mens-Blazer-business-formal-Slim-Blaser-Clothing-Men-BL104.jpg");
         adapter.setVariationImageList(variationImages);
+
+        List<SuggestionModel> suggestionList = new ArrayList<>();
+        suggestionList.add(new SuggestionModel("https://media.gq-magazine.co.uk/photos/5dbc4d5a8da8f900083b9076/master/w_1000,c_limit/20191028-watch-guide-baume.jpg", "Microsoft Game Console", "BDT. 22,850", "34% off", "Sold: 22554", "4.8"));
+        suggestionList.add(new SuggestionModel("https://5.imimg.com/data5/BS/GH/MY-19259497/bagpack-500x500.jpg", "Ray & Ray Multicolor", "BDT. 3,250", "34% off", "Sold: 2251", "4.8"));
+
+        suggestionList.add(new SuggestionModel("https://images-na.ssl-images-amazon.com/images/I/81VcECxgLAL._UL1500_.jpg", "Microsoft Game Console", "BDT. 22,850", "34% off", "Sold: 22554", "4.8"));
+        suggestionList.add(new SuggestionModel("https://www.ikea.com/us/en/images/products/frakta-shopping-bag-large-blue__0711231_PE728076_S5.JPG", "Ray & Ray Multicolor", "BDT. 3,250", "34% off", "Sold: 2251", "4.8"));
+
+        suggestionList.add(new SuggestionModel("https://image.shutterstock.com/image-photo/luxury-classic-watch-white-dial-260nw-1703753980.jpg", "Microsoft Game Console", "BDT. 22,850", "34% off", "Sold: 22554", "4.8"));
+        suggestionList.add(new SuggestionModel("https://static.bhphoto.com/images/images2500x2500/1529950038_1418797.jpg", "Ray & Ray Multicolor", "BDT. 3,250", "34% off", "Sold: 2251", "4.8"));
+
+        suggestionList.add(new SuggestionModel("https://cf.shopee.ph/file/fa89da4bc09f2301595bd475c5c6b675", "Microsoft Game Console", "BDT. 22,850", "34% off", "Sold: 22554", "4.8"));
+
+        adapter.setSuggestionList(suggestionList);
 
         binding.rvProductDetails.setAdapter(adapter);
     }

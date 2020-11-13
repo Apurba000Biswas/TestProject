@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_dark"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_gravity="center"
@@ -16,7 +15,8 @@
         card_view:cardCornerRadius="@dimen/_2sdp">
 
         <ImageView
-            android:id="@+id/icon"
+
+            android:id="@+id/image_variation"
             android:layout_width="@dimen/_53sdp"
             android:layout_height="@dimen/_53sdp"
             android:scaleType="fitXY"
@@ -24,4 +24,3 @@
             android:src="@drawable/ic_star" />
 
     </androidx.cardview.widget.CardView>
-</LinearLayout>

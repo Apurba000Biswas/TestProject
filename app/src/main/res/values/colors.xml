@@ -22,4 +22,7 @@
     <color name="colorLeftRightArchBack">#eeeeee</color>
     <color name="colorAppGreen">#558b2f</color>
 
+    <!-- ripple Color -->
+    <color name="colorRippleDark">#8167a6</color>
+
 </resources>

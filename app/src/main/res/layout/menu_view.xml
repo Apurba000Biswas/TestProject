@@ -64,7 +64,7 @@
         <ImageView
             android:layout_width="@dimen/_14sdp"
             android:layout_height="@dimen/_12sdp"
-            app:srcCompat="@drawable/ic_specifications" />
+            app:srcCompat="@drawable/ic_review" />
 
 
 
@@ -107,7 +107,7 @@
         <ImageView
             android:layout_width="@dimen/_14sdp"
             android:layout_height="@dimen/_12sdp"
-            app:srcCompat="@drawable/ic_specifications" />
+            app:srcCompat="@drawable/ic_order_instruction" />
 
 
 
@@ -151,7 +151,7 @@
         <ImageView
             android:layout_width="@dimen/_14sdp"
             android:layout_height="@dimen/_12sdp"
-            app:srcCompat="@drawable/ic_specifications" />
+            app:srcCompat="@drawable/ic_faq" />
 
 
 
@@ -193,7 +193,7 @@
         <ImageView
             android:layout_width="@dimen/_14sdp"
             android:layout_height="@dimen/_12sdp"
-            app:srcCompat="@drawable/ic_specifications" />
+            app:srcCompat="@drawable/ic_whole_sale" />
 
 
 

@@ -74,17 +74,12 @@ public class ProductSliderAdapter extends SliderViewAdapter<ProductSliderAdapter
     }
 
     class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
-
-
         ImageView productImage;
-
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
             productImage = itemView.findViewById(R.id.iv_product_image);
 
         }
-
-
     }
 }

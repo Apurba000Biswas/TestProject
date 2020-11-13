@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_shipping" />
+        app:srcCompat="@drawable/ic_shopping_bag" />
 
     <TextView
         android:layout_marginTop="@dimen/_10sdp"
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/shape_rectangle_stroke"
+        android:background="@drawable/shape_rectangle"
         android:gravity="center_vertical"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"

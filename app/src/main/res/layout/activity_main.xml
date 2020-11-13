@@ -206,7 +206,59 @@
         android:scrollbars="none"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_43sdp"
+        android:orientation="horizontal">
+        
+        <FrameLayout
+            android:background="@android:color/white"
+            android:layout_width="@dimen/_49sdp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/ic_shopping_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:gravity="center"
+                android:textSize="@dimen/_6sdp"
+                android:textColor="@android:color/white"
+                android:text="2"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:background="@drawable/shape_circle_green"
+                android:layout_width="@dimen/_11sdp"
+                android:layout_height="@dimen/_11sdp"/>
 
+        </FrameLayout>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="#008E47"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="@dimen/_11sdp"
+            android:textAllCaps="true"
+            android:text="Add to Cart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="#00B55B"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="@dimen/_11sdp"
+            android:textAllCaps="true"
+            android:text="Buy Now"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

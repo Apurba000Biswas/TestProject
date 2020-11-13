@@ -21,7 +21,7 @@
         <ImageView
             android:layout_width="@dimen/_14sdp"
             android:layout_height="@dimen/_12sdp"
-            app:srcCompat="@drawable/ic_specifications" />
+            app:srcCompat="@drawable/ic_description" />
 
         <TextView
             android:id="@+id/textView17"

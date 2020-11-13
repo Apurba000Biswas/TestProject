@@ -1,18 +1,25 @@
 package com.apurba.testapp.adapter;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apurba.testapp.R;
+import com.apurba.testapp.data.SuggestionModel;
+import com.apurba.testapp.databinding.SuggestionItemBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -24,11 +31,18 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
     private static final int SHIPPING_VIEW_TYPE = 2;
     private static final int MENU_VIEW_TYPE = 3;
     private static final int DESCRIPTION_VIEW_TYPE = 4;
+    private static final int SUGGESTION_HEADER_VIEW_TYPE = 5;
+    private static final int SUGGESTION_VIEW_TYPE = 6;
 
     private List<String> variationImageList;
+    private List<SuggestionModel> suggestionList;
 
     public void setVariationImageList(List<String> variationImageList){
         this.variationImageList = variationImageList;
+    }
+
+    public void setSuggestionList(List<SuggestionModel> suggestionList){
+        this.suggestionList = suggestionList;
     }
 
     @Override
@@ -45,8 +59,10 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                 return MENU_VIEW_TYPE;
             case 4:
                 return DESCRIPTION_VIEW_TYPE;
+            case 5:
+                return SUGGESTION_HEADER_VIEW_TYPE;
             default:
-                return 0;
+                return SUGGESTION_VIEW_TYPE;
         }
     }
 
@@ -79,9 +95,16 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                 View descriptionView =  LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.description_view, parent, false);
                 return new DescriptionViewHolder(descriptionView);
+            case SUGGESTION_HEADER_VIEW_TYPE:
+                View suggestionHeaderView = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.suggestion_header_view, parent, false);
+                return new SuggestionViewHolder(suggestionHeaderView);
 
             default:
-                return null;
+                SuggestionItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
+                        R.layout.suggestion_item, parent, false);
+
+                return new SuggestionItemHolder(binding);
         }
     }
 
@@ -90,12 +113,9 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
         int viewType = getItemViewType(position);
         switch (viewType){
             case PRICE_DESCRIPTION__VIEW_TYPE:
-                //PriceViewHolder viewHolder = (PriceViewHolder) holder;
-                //viewHolder.bindNewsFeed(feedItems.get(position-5));
                 break;
             case PRODUCT_TYPE_VARIATION_VIEW_TYPE:
-                //NewsFeedItemViewHolder viewHolder = (NewsFeedItemViewHolder) holder;
-                //viewHolder.bindNewsFeed(feedItems.get(position-5));
+
                 VariationViewTypeHolder viewHolder = (VariationViewTypeHolder) holder;
                 viewHolder.bindViews(variationImageList);
                 break;
@@ -107,17 +127,36 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                 String leftImage = "https://static01.nyt.com/images/2010/01/21/fashion/21jeans-2/popup.jpg?quality=90&auto=webp";
                 String rightImage = "https://ae01.alicdn.com/kf/HTB19QnTa.vrK1RjSspcq6zzSXXas/Enjeolon-2020-New-Mens-Jeans-Brand-Black-Jeans-Men-Fashion-Long-Trousers-Mens-Denim-Jeans-Pants.jpg";
 
-
                 descriptionViewHolder.bindView(largeImage, leftImage, rightImage);
+                break;
+            case SUGGESTION_VIEW_TYPE:
+                SuggestionItemHolder suggestionItemHolder = (SuggestionItemHolder) holder;
+
+                int item1Pos = getItem1position(position-6);
+                SuggestionModel item1 = (item1Pos< suggestionList.size())
+                        ? suggestionList.get(item1Pos) : null;
+                SuggestionModel item2 = (item1Pos+1 < suggestionList.size())
+                        ? suggestionList.get(item1Pos+1) : null;
+
+                suggestionItemHolder.bind(item1, item2);
+
+                //
 
         }
     }
 
-    @Override
-    public int getItemCount() {
-        return 5;
+    private int getItem1position(int absolutePosition){
+        return (absolutePosition*2);
     }
 
+    @Override
+    public int getItemCount() {
+        if (suggestionList == null) return 6;
+
+        if (suggestionList.size()%2 == 0) return suggestionList.size()/2 + 6;
+
+        return (suggestionList.size()/2) + 1 + 6;
+    }
 
     class PriceViewHolder extends RecyclerView.ViewHolder{
 
@@ -125,33 +164,52 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
             super(itemView);
             //this.binding = binding;
         }
-
     }
 
     class VariationViewTypeHolder extends RecyclerView.ViewHolder{
 
-        private GridView gridView;
+        private LinearLayout variationHolder;
 
         public VariationViewTypeHolder(@NonNull View itemView) {
             super(itemView);
-            gridView = itemView.findViewById(R.id.variationImageGridView);
+            variationHolder = itemView.findViewById(R.id.variation_base_holder);
         }
 
         void bindViews(List<String> variationImages){
             if (variationImages == null) return;
 
-            VariationAdapter adapter = new VariationAdapter(gridView.getContext(), variationImages);
-            gridView.setAdapter(adapter);
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    // set an Intent to Another Activity
-                    //Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                    //intent.putExtra("image", logos[position]); // put image data in Intent
-                    //startActivity(intent); // start Intent
-                    Toast.makeText(gridView.getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+            variationHolder.removeAllViews();
+            if (variationImages.isEmpty()){
+                return;
+            }
+            int count = 0;
+
+            View rowBaseHolder =  LayoutInflater.from(variationHolder.getContext())
+                    .inflate(R.layout.variation_row_view, null, false);
+
+            for (int i=0; i<variationImages.size(); i++){
+                String img = variationImages.get(i);
+
+                LinearLayout rowHolder = rowBaseHolder.findViewById(R.id.row_holder);
+                View item = LayoutInflater.from(variationHolder.getContext())
+                        .inflate(R.layout.variation_image_view, null, false);
+                loadImage(img, item.findViewById(R.id.image_variation));
+                CardView cardView = item.findViewById(R.id.card_view);
+                int finalI = i;
+                cardView.setOnClickListener(view -> Toast.makeText(view.getContext(), "Clicked on "
+                        + finalI, Toast.LENGTH_SHORT).show());
+
+                rowHolder.addView(item);
+                count++;
+
+                if (count == 5){
+                    variationHolder.addView(rowHolder);
+                    rowBaseHolder =  LayoutInflater.from(variationHolder.getContext())
+                            .inflate(R.layout.variation_row_view, null, false);
+                    count = 0;
                 }
-            });
+            }
+            variationHolder.addView(rowBaseHolder);
         }
     }
 
@@ -163,7 +221,6 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
     }
 
     class MenuViewHolder extends  RecyclerView.ViewHolder{
-
         public MenuViewHolder(@NonNull View itemView) {
             super(itemView);
         }
@@ -184,28 +241,45 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
         }
 
         void bindView(String largeImgUrl, String leftImgUrl, String rightImgUrl){
-
-
-
-            Picasso.get()
-                    .load(largeImgUrl)
-                    .fit()
-                    .centerCrop()
-                    .into(descriptionImageLarge);
-
-            Picasso.get()
-                    .load(leftImgUrl)
-                    .fit()
-                    .centerCrop()
-                    .into(descriptionImageLeft);
-
-            Picasso.get()
-                    .load(rightImgUrl)
-                    .fit()
-                    .centerCrop()
-                    .into(descriptionImageRight);
+            loadImage(largeImgUrl, descriptionImageLarge);
+            loadImage(leftImgUrl, descriptionImageLeft);
+            loadImage(rightImgUrl, descriptionImageRight);
 
         }
+    }
+
+    class SuggestionViewHolder extends RecyclerView.ViewHolder{
+
+        public SuggestionViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
+
+    class SuggestionItemHolder extends RecyclerView.ViewHolder{
+        SuggestionItemBinding binding;
+
+        public SuggestionItemHolder(@NonNull SuggestionItemBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        public void bind(SuggestionModel item1, SuggestionModel item2){
+
+            binding.setItem1(item1);
+            if (item2 == null){
+                binding.groupItem2Group.setVisibility(View.GONE);
+                return;
+            }
+            binding.setItem2(item2);
+        }
+    }
+
+    private void loadImage(String url, ImageView imageView){
+        Picasso.get()
+                .load(url)
+                .fit()
+                .centerCrop()
+                .into(imageView);
     }
 
 
