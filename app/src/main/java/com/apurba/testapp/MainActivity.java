@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 , false);
         binding.rvProductDetails.setLayoutManager(layoutManager);
 
-        MainAdapter adapter = new MainAdapter();
+        MainAdapter adapter = new MainAdapter(getSupportFragmentManager());
         List<String> variationImages = new ArrayList<>();
         variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
         variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");

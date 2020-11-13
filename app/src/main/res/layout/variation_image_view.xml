@@ -21,6 +21,6 @@
             android:layout_height="@dimen/_53sdp"
             android:scaleType="fitXY"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_star" />
+            android:src="@drawable/dummy_1" />
 
     </androidx.cardview.widget.CardView>

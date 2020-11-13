@@ -15,9 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apurba.testapp.R;
+import com.apurba.testapp.VariationDialog;
 import com.apurba.testapp.data.SuggestionModel;
 import com.apurba.testapp.databinding.SuggestionItemBinding;
 import com.squareup.picasso.Picasso;
@@ -36,6 +38,11 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
 
     private List<String> variationImageList;
     private List<SuggestionModel> suggestionList;
+    private FragmentManager fragmentManager;
+
+    public MainAdapter(FragmentManager fragmentManager){
+        this.fragmentManager = fragmentManager;
+    }
 
     public void setVariationImageList(List<String> variationImageList){
         this.variationImageList = variationImageList;
@@ -196,8 +203,9 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                 loadImage(img, item.findViewById(R.id.image_variation));
                 CardView cardView = item.findViewById(R.id.card_view);
                 int finalI = i;
-                cardView.setOnClickListener(view -> Toast.makeText(view.getContext(), "Clicked on "
-                        + finalI, Toast.LENGTH_SHORT).show());
+                cardView.setOnClickListener(view ->
+                        showVariationDialog(variationImages, finalI)
+                );
 
                 rowHolder.addView(item);
                 count++;
@@ -211,6 +219,12 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
             }
             variationHolder.addView(rowBaseHolder);
         }
+    }
+
+    private void showVariationDialog(List<String> variationImages, int selectedIndex){
+        VariationDialog dialog = new VariationDialog(variationImages, selectedIndex);
+        dialog.show(fragmentManager, dialog.getTag());
+
     }
 
     class ShippingViewHolder extends  RecyclerView.ViewHolder{

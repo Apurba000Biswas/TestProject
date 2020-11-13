@@ -196,7 +196,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-
+        android:layout_marginBottom="@dimen/_43sdp"
         android:id="@+id/rv_product_details"
         android:descendantFocusability="blocksDescendants"
         android:layout_width="match_parent"
