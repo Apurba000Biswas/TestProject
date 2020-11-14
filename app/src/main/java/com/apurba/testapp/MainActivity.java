@@ -116,6 +116,15 @@ public class MainActivity extends AppCompatActivity {
 
         variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
         variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");
+        variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
+        variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");
+        variationImages.add("https://ae01.alicdn.com/kf/HTB1EfLjN3TqK1RjSZPhq6xfOFXas/Classic-Plaid-Men-s-Suit-Dress-Slim-Fit-Tuxedo-Wedding-Evening-Clothing-British-Style-Checkered-Formal.jpg");
+        variationImages.add("https://labane.com/wp-content/uploads/2019/10/Mens-Blazer-business-formal-Slim-Blaser-Clothing-Men-BL104.jpg");
+
+        variationImages.add("https://cdn.shopify.com/s/files/1/0094/8466/4890/products/product-image-464869218_1200x1200.jpg?v=1574547069");
+        variationImages.add("https://cf.shopee.com.my/file/3e4564110e7cfa18ceca19998be8af4d");
+
+
         //variationImages.add("https://ae01.alicdn.com/kf/HTB1EfLjN3TqK1RjSZPhq6xfOFXas/Classic-Plaid-Men-s-Suit-Dress-Slim-Fit-Tuxedo-Wedding-Evening-Clothing-British-Style-Checkered-Formal.jpg");
         //variationImages.add("https://labane.com/wp-content/uploads/2019/10/Mens-Blazer-business-formal-Slim-Blaser-Clothing-Men-BL104.jpg");
         adapter.setVariationImageList(variationImages);

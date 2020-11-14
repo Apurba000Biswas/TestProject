@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_36sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/_31sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_21sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_secure_payment" />
+
+    <ImageView
+        android:id="@+id/iv_logo_2"
+        android:layout_width="@dimen/_31sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_17sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView36"
+        app:srcCompat="@drawable/ic_easy_return" />
+
+    <ImageView
+        android:id="@+id/iv_logo_3"
+        android:layout_width="@dimen/_31sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_17sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_2"
+        app:srcCompat="@drawable/ic_money" />
+
+
+    <ImageView
+        android:id="@+id/iv_logo_4"
+        android:layout_width="@dimen/_31sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_17sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_3"
+        app:srcCompat="@drawable/ic_speed" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="@dimen/_82sdp"
+        android:layout_height="@dimen/_82sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_6"
+        app:srcCompat="@drawable/ssl_logo" />
+
+    <ImageView
+        android:padding="@dimen/_6sdp"
+        android:id="@+id/imageView6"
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/shape_rectangle_stroke_2"
+        android:elevation="0.3dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:srcCompat="@drawable/bkash" />
+
+
+    <ImageView
+        android:padding="@dimen/_6sdp"
+
+        android:layout_marginStart="@dimen/_3sdp"
+        android:id="@+id/imageView7"
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/shape_rectangle_stroke_2"
+        android:elevation="0.3dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@drawable/visa" />
+
+    <ImageView
+        android:padding="@dimen/_6sdp"
+
+        android:layout_marginStart="@dimen/_3sdp"
+        android:id="@+id/imageView8"
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/shape_rectangle_stroke_2"
+        android:elevation="0.3dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@drawable/nagad" />
+
+    <ImageView
+        android:padding="@dimen/_6sdp"
+
+        android:layout_marginStart="@dimen/_3sdp"
+        android:id="@+id/imageView9"
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/shape_rectangle_stroke_2"
+        android:elevation="0.3dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@drawable/visa" />
+
+
+    <ImageView
+        android:id="@+id/imageView10"
+
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:background="@drawable/shape_rectangle_stroke_2"
+        android:elevation="0.3dp"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@drawable/master_card" />
+
+    <ImageView
+        android:padding="@dimen/_6sdp"
+
+        android:layout_marginStart="@dimen/_3sdp"
+        android:id="@+id/imageView11"
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/shape_rectangle_stroke_2"
+        android:elevation="0.3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@drawable/bkash" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="100% Secure"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_29sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_29sdp"
+        android:text="All payments are processed instantly over a secure payment protocol."
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/tv_name_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Easy Return"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_2" />
+
+    <TextView
+        android:id="@+id/tv_description_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_29sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_29sdp"
+        android:text="If an item arrived damaged or not as described, you can send it back for a full refund."
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_2" />
+
+    <TextView
+        android:id="@+id/tv_name_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Money Back Guarantee"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_3" />
+
+    <TextView
+        android:id="@+id/tv_description_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_29sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_29sdp"
+        android:text="Receive your item as described. Or your money back."
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_3" />
+
+    <TextView
+        android:id="@+id/tv_name_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Money Back Guarantee"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_4" />
+
+    <TextView
+        android:id="@+id/tv_description_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_29sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_29sdp"
+        android:text="Receive your item as described. Or your money back."
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_5" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="SECURED PAYMENT"
+        android:textAllCaps="true"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="SSL"
+        android:textAllCaps="true"
+        android:textColor="#00BC58"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toStartOf="@+id/textView37"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

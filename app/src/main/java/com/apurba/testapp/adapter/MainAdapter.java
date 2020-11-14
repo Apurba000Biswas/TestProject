@@ -35,10 +35,12 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
     private static final int DESCRIPTION_VIEW_TYPE = 4;
     private static final int SUGGESTION_HEADER_VIEW_TYPE = 5;
     private static final int SUGGESTION_VIEW_TYPE = 6;
+    private static final int FOOTER_VIEW_TYPE = 7;
 
     private List<String> variationImageList;
     private List<SuggestionModel> suggestionList;
     private FragmentManager fragmentManager;
+
 
     public MainAdapter(FragmentManager fragmentManager){
         this.fragmentManager = fragmentManager;
@@ -54,6 +56,12 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
 
     @Override
     public int getItemViewType(int position) {
+        int expectedPosition = 6;
+        if (suggestionList.size() % 2 == 1) {
+            expectedPosition++;
+        }
+        if (position == suggestionList.size()/2 + expectedPosition) return FOOTER_VIEW_TYPE;
+
 
         switch (position){
             case 0:
@@ -106,6 +114,10 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                 View suggestionHeaderView = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.suggestion_header_view, parent, false);
                 return new SuggestionViewHolder(suggestionHeaderView);
+            case FOOTER_VIEW_TYPE:
+                View footerView = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.footer_view_type, parent, false);
+                return new FooterViewHolder(footerView);
 
             default:
                 SuggestionItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
@@ -147,8 +159,6 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
 
                 suggestionItemHolder.bind(item1, item2);
 
-                //
-
         }
     }
 
@@ -158,11 +168,11 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
 
     @Override
     public int getItemCount() {
-        if (suggestionList == null) return 6;
+        if (suggestionList == null) return 7;
 
-        if (suggestionList.size()%2 == 0) return suggestionList.size()/2 + 6;
+        if (suggestionList.size()%2 == 0) return suggestionList.size()/2 + 7;
 
-        return (suggestionList.size()/2) + 1 + 6;
+        return (suggestionList.size()/2) + 1 + 7;
     }
 
     class PriceViewHolder extends RecyclerView.ViewHolder{
@@ -285,6 +295,13 @@ public class MainAdapter extends RecyclerView.Adapter < RecyclerView.ViewHolder 
                 return;
             }
             binding.setItem2(item2);
+        }
+    }
+
+    class FooterViewHolder extends  RecyclerView.ViewHolder{
+
+        public FooterViewHolder(@NonNull View itemView) {
+            super(itemView);
         }
     }
 
